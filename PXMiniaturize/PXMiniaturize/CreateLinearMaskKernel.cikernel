@@ -1,0 +1,22 @@
+float getTransitionYOffset(float centerY, float linearRadius, float y){
+
+    float yOffset = ((abs(y - centerY) - linearRadius) <= 0.0) ? 0.0 : abs(y - centerY) - linearRadius;
+    
+    return yOffset;
+}
+
+kernel vec4 CreateLinearMaskKernel(sampler src, float centerX, float centerY, float linearRadius, float transitionSize, float rotateAngle)
+{
+    vec4 pix = premultiply(sample(src, samplerCoord(src)));
+    
+    const vec2 xy = destCoord();
+    
+    float newX = centerX + (xy.x - centerX) * cos(rotateAngle) - (xy.y - centerY) * sin(rotateAngle);
+    float newY = centerY + (xy.x - centerX) * sin(rotateAngle) + (xy.y - centerY) * cos(rotateAngle);
+    
+    pix.r = (newY > (centerY + linearRadius + transitionSize)) ? 1.0 : (newY  < (centerY - linearRadius - transitionSize)) ? 1.0 : getTransitionYOffset(centerY, linearRadius, newY) / (transitionSize + 0.0001);
+    
+    pix.g = pix.b = pix.r;
+    
+    return unpremultiply(pix);
+}

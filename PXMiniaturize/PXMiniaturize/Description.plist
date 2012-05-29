@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CIPlugInFilterList</key>
+	<dict>
+		<key>PXMiniaturize</key>
+		<dict>
+			<key>CIFilterAttributes</key>
+			<dict>
+				<key>CIAttributeDescription</key>
+				<string>filterDescription</string>
+				<key>CIAttributeFilterCategories</key>
+				<array>
+					<string>CICategoryDistortionEffect</string>
+					<string>CICategoryVideo</string>
+					<string>CICategoryStillImage</string>
+				</array>
+				<key>CIAttributeFilterDisplayName</key>
+				<string>PXMiniaturizeFilter</string>
+				<key>CIAttributeReferenceDocumentation</key>
+				<string>index</string>
+			</dict>
+			<key>CIFilterClass</key>
+			<string>PXMiniaturizeFilter</string>
+			<key>CIHasCustomInterface</key>
+			<false/>
+			<key>New item</key>
+			<string></string>
+		</dict>
+	</dict>
+	<key>CIPlugInVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

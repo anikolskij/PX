@@ -1,0 +1,20 @@
+float smoothstep(float x)
+{
+    return (x * -2.0 + 3.0) * x * x;
+}
+
+kernel vec4 funHouse(sampler src, float centerX, float centerY, float linearRadius, float rotateAngle)
+{
+    vec4 pix = sample(src, samplerCoord(src));
+    
+    const vec2 xy = destCoord();
+    
+    float newX = centerX + (xy.x - centerX) * cos_(rotateAngle) - (xy.y - centerY) * sin_(rotateAngle);
+    float newY = centerY + (xy.x - centerX) * sin_(rotateAngle) + (xy.y - centerY) * cos_(rotateAngle);
+    
+    vec4 newPix = sample(src, samplerTransform(src, vec2(newX, newY)));
+    
+    pix.rgb = newPix.rgb;
+    
+    return pix;
+}

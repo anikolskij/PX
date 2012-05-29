@@ -1,0 +1,588 @@
+
+vec4 RadiusBlur_0_9(sampler image, const vec2 xy, float width, float height)
+{
+
+    float newX = 0.0;
+    float newY = 0.0;
+    vec4 tempPix;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    vec4 pix;
+    
+		//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.014840;
+	greenSum += tempPix.g * 0.014840;
+	blueSum += tempPix.b * 0.014840;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.106980;
+	greenSum += tempPix.g * 0.106980;
+	blueSum += tempPix.b * 0.106980;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.106980;
+	greenSum += tempPix.g * 0.106980;
+	blueSum += tempPix.b * 0.106980;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.771200;
+	greenSum += tempPix.g * 0.771200;
+	blueSum += tempPix.b * 0.771200;
+
+    
+    pix.r = redSum;
+    pix.g = greenSum;
+    pix.b = blueSum;
+
+    return pix;
+}
+
+
+    
+    
+vec4 RadiusBlur_1_0(sampler image, const vec2 xy, float width, float height)
+{
+
+    float newX = 0.0;
+    float newY = 0.0;
+    vec4 tempPix;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    vec4 pix;
+    
+		//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.011344;
+	greenSum += tempPix.g * 0.011344;
+	blueSum += tempPix.b * 0.011344;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.083820;
+	greenSum += tempPix.g * 0.083820;
+	blueSum += tempPix.b * 0.083820;
+
+	//--------------------
+	//
+	newX = ((xy.x + (1.0)) < 0.0) ? xy.x : (xy.x + (1.0));
+	newX = ((xy.x + (1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.011344;
+	greenSum += tempPix.g * 0.011344;
+	blueSum += tempPix.b * 0.011344;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.083820;
+	greenSum += tempPix.g * 0.083820;
+	blueSum += tempPix.b * 0.083820;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.619347;
+	greenSum += tempPix.g * 0.619347;
+	blueSum += tempPix.b * 0.619347;
+
+	//--------------------
+	//
+	newX = ((xy.x + (1.0)) < 0.0) ? xy.x : (xy.x + (1.0));
+	newX = ((xy.x + (1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.083820;
+	greenSum += tempPix.g * 0.083820;
+	blueSum += tempPix.b * 0.083820;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (1.0)) < 0.0) ? xy.y : (xy.y + (1.0));
+	newY = ((xy.y + (1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.011344;
+	greenSum += tempPix.g * 0.011344;
+	blueSum += tempPix.b * 0.011344;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (1.0)) < 0.0) ? xy.y : (xy.y + (1.0));
+	newY = ((xy.y + (1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.083820;
+	greenSum += tempPix.g * 0.083820;
+	blueSum += tempPix.b * 0.083820;
+
+	//--------------------
+	//
+	newX = ((xy.x + (1.0)) < 0.0) ? xy.x : (xy.x + (1.0));
+	newX = ((xy.x + (1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (1.0)) < 0.0) ? xy.y : (xy.y + (1.0));
+	newY = ((xy.y + (1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.011344;
+	greenSum += tempPix.g * 0.011344;
+	blueSum += tempPix.b * 0.011344;
+
+    
+    pix.r = redSum;
+    pix.g = greenSum;
+    pix.b = blueSum;
+
+    return pix;
+}
+
+
+vec4 RadiusBlur_2_0(sampler image, const vec2 xy, float width, float height)
+{
+
+    float newX = 0.0;
+    float newY = 0.0;
+    vec4 tempPix;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    vec4 pix;
+    
+		//--------------------
+	//
+	newX = ((xy.x + (-2.0)) < 0.0) ? xy.x : (xy.x + (-2.0));
+	newX = ((xy.x + (-2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-2.0)) < 0.0) ? xy.y : (xy.y + (-2.0));
+	newY = ((xy.y + (-2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.002969;
+	greenSum += tempPix.g * 0.002969;
+	blueSum += tempPix.b * 0.002969;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-2.0)) < 0.0) ? xy.y : (xy.y + (-2.0));
+	newY = ((xy.y + (-2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.013306;
+	greenSum += tempPix.g * 0.013306;
+	blueSum += tempPix.b * 0.013306;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-2.0)) < 0.0) ? xy.y : (xy.y + (-2.0));
+	newY = ((xy.y + (-2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.021938;
+	greenSum += tempPix.g * 0.021938;
+	blueSum += tempPix.b * 0.021938;
+
+	//--------------------
+	//
+	newX = ((xy.x + (1.0)) < 0.0) ? xy.x : (xy.x + (1.0));
+	newX = ((xy.x + (1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-2.0)) < 0.0) ? xy.y : (xy.y + (-2.0));
+	newY = ((xy.y + (-2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.013306;
+	greenSum += tempPix.g * 0.013306;
+	blueSum += tempPix.b * 0.013306;
+
+	//--------------------
+	//
+	newX = ((xy.x + (2.0)) < 0.0) ? xy.x : (xy.x + (2.0));
+	newX = ((xy.x + (2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-2.0)) < 0.0) ? xy.y : (xy.y + (-2.0));
+	newY = ((xy.y + (-2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.002969;
+	greenSum += tempPix.g * 0.002969;
+	blueSum += tempPix.b * 0.002969;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-2.0)) < 0.0) ? xy.x : (xy.x + (-2.0));
+	newX = ((xy.x + (-2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.013306;
+	greenSum += tempPix.g * 0.013306;
+	blueSum += tempPix.b * 0.013306;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.059634;
+	greenSum += tempPix.g * 0.059634;
+	blueSum += tempPix.b * 0.059634;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.098320;
+	greenSum += tempPix.g * 0.098320;
+	blueSum += tempPix.b * 0.098320;
+
+	//--------------------
+	//
+	newX = ((xy.x + (1.0)) < 0.0) ? xy.x : (xy.x + (1.0));
+	newX = ((xy.x + (1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.059634;
+	greenSum += tempPix.g * 0.059634;
+	blueSum += tempPix.b * 0.059634;
+
+	//--------------------
+	//
+	newX = ((xy.x + (2.0)) < 0.0) ? xy.x : (xy.x + (2.0));
+	newX = ((xy.x + (2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (-1.0)) < 0.0) ? xy.y : (xy.y + (-1.0));
+	newY = ((xy.y + (-1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.013306;
+	greenSum += tempPix.g * 0.013306;
+	blueSum += tempPix.b * 0.013306;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-2.0)) < 0.0) ? xy.x : (xy.x + (-2.0));
+	newX = ((xy.x + (-2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.021938;
+	greenSum += tempPix.g * 0.021938;
+	blueSum += tempPix.b * 0.021938;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.098320;
+	greenSum += tempPix.g * 0.098320;
+	blueSum += tempPix.b * 0.098320;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.162103;
+	greenSum += tempPix.g * 0.162103;
+	blueSum += tempPix.b * 0.162103;
+
+	//--------------------
+	//
+	newX = ((xy.x + (1.0)) < 0.0) ? xy.x : (xy.x + (1.0));
+	newX = ((xy.x + (1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.098320;
+	greenSum += tempPix.g * 0.098320;
+	blueSum += tempPix.b * 0.098320;
+
+	//--------------------
+	//
+	newX = ((xy.x + (2.0)) < 0.0) ? xy.x : (xy.x + (2.0));
+	newX = ((xy.x + (2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (0.0)) < 0.0) ? xy.y : (xy.y + (0.0));
+	newY = ((xy.y + (0.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.021938;
+	greenSum += tempPix.g * 0.021938;
+	blueSum += tempPix.b * 0.021938;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-2.0)) < 0.0) ? xy.x : (xy.x + (-2.0));
+	newX = ((xy.x + (-2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (1.0)) < 0.0) ? xy.y : (xy.y + (1.0));
+	newY = ((xy.y + (1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.013306;
+	greenSum += tempPix.g * 0.013306;
+	blueSum += tempPix.b * 0.013306;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (1.0)) < 0.0) ? xy.y : (xy.y + (1.0));
+	newY = ((xy.y + (1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.059634;
+	greenSum += tempPix.g * 0.059634;
+	blueSum += tempPix.b * 0.059634;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (1.0)) < 0.0) ? xy.y : (xy.y + (1.0));
+	newY = ((xy.y + (1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.098320;
+	greenSum += tempPix.g * 0.098320;
+	blueSum += tempPix.b * 0.098320;
+
+	//--------------------
+	//
+	newX = ((xy.x + (1.0)) < 0.0) ? xy.x : (xy.x + (1.0));
+	newX = ((xy.x + (1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (1.0)) < 0.0) ? xy.y : (xy.y + (1.0));
+	newY = ((xy.y + (1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.059634;
+	greenSum += tempPix.g * 0.059634;
+	blueSum += tempPix.b * 0.059634;
+
+	//--------------------
+	//
+	newX = ((xy.x + (2.0)) < 0.0) ? xy.x : (xy.x + (2.0));
+	newX = ((xy.x + (2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (1.0)) < 0.0) ? xy.y : (xy.y + (1.0));
+	newY = ((xy.y + (1.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.013306;
+	greenSum += tempPix.g * 0.013306;
+	blueSum += tempPix.b * 0.013306;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-2.0)) < 0.0) ? xy.x : (xy.x + (-2.0));
+	newX = ((xy.x + (-2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (2.0)) < 0.0) ? xy.y : (xy.y + (2.0));
+	newY = ((xy.y + (2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.002969;
+	greenSum += tempPix.g * 0.002969;
+	blueSum += tempPix.b * 0.002969;
+
+	//--------------------
+	//
+	newX = ((xy.x + (-1.0)) < 0.0) ? xy.x : (xy.x + (-1.0));
+	newX = ((xy.x + (-1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (2.0)) < 0.0) ? xy.y : (xy.y + (2.0));
+	newY = ((xy.y + (2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.013306;
+	greenSum += tempPix.g * 0.013306;
+	blueSum += tempPix.b * 0.013306;
+
+	//--------------------
+	//
+	newX = ((xy.x + (0.0)) < 0.0) ? xy.x : (xy.x + (0.0));
+	newX = ((xy.x + (0.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (2.0)) < 0.0) ? xy.y : (xy.y + (2.0));
+	newY = ((xy.y + (2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.021938;
+	greenSum += tempPix.g * 0.021938;
+	blueSum += tempPix.b * 0.021938;
+
+	//--------------------
+	//
+	newX = ((xy.x + (1.0)) < 0.0) ? xy.x : (xy.x + (1.0));
+	newX = ((xy.x + (1.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (2.0)) < 0.0) ? xy.y : (xy.y + (2.0));
+	newY = ((xy.y + (2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.013306;
+	greenSum += tempPix.g * 0.013306;
+	blueSum += tempPix.b * 0.013306;
+
+	//--------------------
+	//
+	newX = ((xy.x + (2.0)) < 0.0) ? xy.x : (xy.x + (2.0));
+	newX = ((xy.x + (2.0)) >= width) ? width - 1.0 : newX;
+
+	newY = ((xy.y + (2.0)) < 0.0) ? xy.y : (xy.y + (2.0));
+	newY = ((xy.y + (2.0)) >= height) ? height - 1.0 : newY;
+
+	tempPix = sample(image, samplerTransform(image, vec2(newX, newY)));
+	redSum += tempPix.r * 0.002969;
+	greenSum += tempPix.g * 0.002969;
+	blueSum += tempPix.b * 0.002969;
+
+
+    
+    pix.r = redSum;
+    pix.g = greenSum;
+    pix.b = blueSum;
+
+    return pix;
+}
+
+kernel vec4 GaussianBlurKernel(sampler image, sampler maskImage, float imageWidth, float imageHeight, float blurRadius /*, __table sampler data */)
+{
+    vec4 pix;
+    
+    pix = unpremultiply(sample(image, samplerCoord(image)));
+    
+    const vec2 xy = destCoord();
+    
+    vec4 maskPix;
+    maskPix = sample(maskImage, samplerCoord(image));
+    
+    float radius = blurRadius * maskPix.r;
+    
+    vec4 bluredPix;
+    
+    bluredPix = (radius == 0.0) ? pix : (radius > 0.0) ? ((radius <= 0.8) ? RadiusBlur_0_9(image, xy, imageWidth, imageHeight) : pix ) : pix;
+    bluredPix = (radius > 0.8) ? ((radius <= 1.4) ? RadiusBlur_1_0(image, xy, imageWidth, imageHeight) : bluredPix ) : bluredPix;
+    bluredPix = (radius > 1.4) ? RadiusBlur_2_0(image, xy, imageWidth, imageHeight) : bluredPix;
+
+    pix.r = bluredPix.r;
+    pix.g = bluredPix.g;
+    pix.b = bluredPix.b;
+    
+    return premultiply(pix); 
+}

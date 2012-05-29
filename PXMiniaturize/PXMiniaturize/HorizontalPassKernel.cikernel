@@ -1,0 +1,335 @@
+vec4 onePixelRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 1.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+    
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+    
+    return pix;
+}
+
+vec4 twoPixelsRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 2.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+    
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+    
+    return pix;
+}
+
+vec4 threePixelsRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 3.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+    
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+    
+    return pix;
+}
+
+vec4 fourPixelsRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 4.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+    
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+    
+    return pix;
+}
+
+vec4 fivePixelsRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 5.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+    
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+    
+    return pix;
+}
+
+vec4 sixPixelsRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 6.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+    
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+    
+    return pix;
+}
+
+vec4 sevenPixelsRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 7.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+    
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+    
+    return pix;
+}
+
+vec4 eightPixelsRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 8.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+    
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+    
+    return pix;
+}
+
+vec4 ninePixelsRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 9.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+    
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+    
+    return pix;
+}
+
+vec4 tenPixelsRadius(sampler image, const vec2 xy, float width)
+{
+    vec4 pix;
+    
+    float radius = 10.0;
+    
+    float redSum = 0.0;
+    float greenSum = 0.0;
+    float blueSum = 0.0;
+    
+    float newX = 0.0;
+
+    for(float f=-radius; f<=radius; f++){
+    
+        newX = ((xy.x+f) < 0.0) ? xy.x : xy.x+f;
+        newX = ((xy.x+f) >= width) ? width - 1.0 : newX;
+    
+        vec4 tempPix = sample(image, samplerTransform(image, vec2(newX, xy.y)));
+        
+        redSum += tempPix.r;
+        greenSum += tempPix.g;
+        blueSum += tempPix.b;
+    }
+    
+    pix.r = redSum/(radius*2.0 + 1.0);
+    pix.g = greenSum/(radius*2.0 + 1.0);
+    pix.b = blueSum/(radius*2.0 + 1.0);
+
+    return pix;
+}
+
+kernel vec4 HorizontalPassKernel(sampler image, sampler maskImage, float blurRadius, float imageWidth)
+{
+    vec4 pix;
+
+    pix = unpremultiply(sample(image, samplerCoord(image)));    
+   
+    vec4 maskPix;
+    maskPix = unpremultiply(sample(maskImage, samplerCoord(maskImage)));
+    
+    const vec2 xy = destCoord();
+    
+    vec4 newPix;
+    
+    float newRadius = blurRadius*maskPix.r;
+    int intRadius = int(newRadius);
+    float radius = float(intRadius);    
+    
+   
+    newPix = (radius == 0.0) ? pix : (radius == 1.0) ? onePixelRadius(image, xy, imageWidth) : (radius == 2.0) ? twoPixelsRadius(image, xy, imageWidth) : (radius == 3.0) ? threePixelsRadius(image, xy, imageWidth) : (radius == 4.0) ? fourPixelsRadius(image, xy, imageWidth) : (radius == 5.0) ? fivePixelsRadius(image, xy, imageWidth) : (radius == 6.0) ? sixPixelsRadius(image, xy, imageWidth) : (radius == 7.0) ? sevenPixelsRadius(image, xy, imageWidth) : (radius == 8.0) ? eightPixelsRadius(image, xy, imageWidth) : (radius == 9.0) ? ninePixelsRadius(image, xy, imageWidth) : tenPixelsRadius(image, xy, imageWidth);
+
+    
+    pix.rgb = newPix.rgb;
+    
+    return premultiply(pix); 
+}
